@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Locator</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <h1>Campus Locator</h1>
+      <label class="mode-label">Mode <select id="mode"></select></label>
+    </header>
+
+    <section class="panel">
+      <div class="meta">
+        <span id="round"></span>
+        <span id="total"></span>
+      </div>
+      <div id="clue">
+        <div class="label">Where is</div>
+        <div class="name" id="school"></div>
+      </div>
+      <div id="result" class="result" hidden>
+        <span id="result-dist"></span>
+        <span id="result-pts" class="pts"></span>
+      </div>
+    </section>
+
+    <div id="map" class="map" aria-label="World map. Click to place your guess."></div>
+
+    <section id="controls" class="controls">
+      <p id="hint" class="hint"></p>
+      <button id="primary" class="btn" disabled>Lock in guess</button>
+    </section>
+
+    <section id="summary" class="summary" hidden>
+      <h2 id="summary-title"></h2>
+      <div class="final" id="final"></div>
+      <p class="hint">Orange: your guesses. Green: the actual campuses. Dashed line: how far off you were.</p>
+      <ol id="breakdown"></ol>
+      <div class="summary-actions">
+        <button id="share" class="btn">Copy result</button>
+        <span id="countdown" class="hint"></span>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
